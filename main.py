@@ -184,8 +184,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
 def main() -> None:
     """Запускает бота."""
-    proxy_url='socks5://157.245.155.242:6350'
-    application = (Application.builder().token(TG_TOKEN).proxy(proxy_url).get_updates_proxy(proxy_url).build())
+    application = (Application.builder().token(TG_TOKEN).build())
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler('start', start)],
